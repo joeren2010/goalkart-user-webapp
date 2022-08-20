@@ -8,19 +8,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import { ProductsComponent } from './components/products/products.component';
-import { ViewComponent } from './components/products/view/view.component';
-import { WhishlistComponent } from './components/products/whishlist/whishlist.component';
-import { CartComponent } from './components/products/cart/cart.component';
-import { OrdersComponent } from './components/orders/orders.component';
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
-import { ProfileComponent } from './components/auth/profile/profile.component';
-import { ChangePasswordComponent } from './components/auth/change-password/change-password.component';
-import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
-import { CheckoutComponent } from './components/products/checkout/checkout.component';
-import { ProductsModule } from './components/products/products.module';
 import { AuthModule } from './components/auth/auth.module';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { OrdersComponent } from './components/orders/orders.component';
+import { ProductsModule } from './components/products/products.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,8 +26,8 @@ import { AuthModule } from './components/auth/auth.module';
     OrdersComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule, ProductsModule, AuthModule
+    BrowserModule,RouterModule,
+    AppRoutingModule, ProductsModule, AuthModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
