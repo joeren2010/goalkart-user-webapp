@@ -17,4 +17,9 @@ export class WhishlistComponent implements OnInit {
     let elements = this.db.whishlistProducts.splice(prdIdx, 1);
     console.log(elements[0]['title'], "Product Removed from Whishlist");
   }
+
+  addProductToShoppingCart(prd:any, removeBool:boolean, prdIdx:number) {
+    this.db.addProductToShoppingCart(prd, removeBool, prdIdx);
+    this.removeProductFromWhishlist(prdIdx);
+  }
 }

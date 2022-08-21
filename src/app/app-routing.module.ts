@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { CartComponent } from './components/products/cart/cart.component';
+import { CheckoutComponent } from './components/products/checkout/checkout.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ViewComponent } from './components/products/view/view.component';
 import { WhishlistComponent } from './components/products/whishlist/whishlist.component';
@@ -20,8 +21,8 @@ const routes: Routes = [
   {path:'user-profile' , component:ProfileComponent},
   {path:'products' , children: [
     { path :'', component: ProductsComponent },
-    { path :'cart', component: CartComponent },
-    { path :'checkout', component: CartComponent },
+    { path :'shopping-cart', component: CartComponent },
+    { path :'checkout', component: CheckoutComponent },
     { path :'view', component: ViewComponent },
     { path :'whishlist', component: WhishlistComponent },
   ]},

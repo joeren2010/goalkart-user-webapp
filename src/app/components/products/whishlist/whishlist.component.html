@@ -34,7 +34,7 @@
                   </p>
   
                   <div class="d-flex align-items-center">
-                    <button type="button" class="btn btn-sm btn-dark me-2" >Add to Cart</button>
+                    <button type="button" class="btn btn-sm btn-dark me-2" (click)="addProductToShoppingCart(product,true,idx)">Add to Cart</button>
                     <button type="button" class="btn btn-sm btn-danger" (click)="removeProductFromWhishlist(idx) ">Remove</button>
                   </div>
                 </div>
