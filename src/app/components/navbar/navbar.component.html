@@ -19,7 +19,12 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="#">Wishlist</a>
+                    <a class="nav-link" routerLink="/products/whishlist">Wishlist
+                        <span  *ngIf="productSrv.whishlistProducts.length !==0" class="position-absolute top-2 start-10 translate-middle badge rounded-pill bg-danger">
+                            {{productSrv.whishlistProducts.length || 0}}
+                            <span class="visually-hidden">unread messages</span>
+                          </span>
+                    </a>
                 </li>
             
             </ul>

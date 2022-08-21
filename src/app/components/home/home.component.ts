@@ -9,7 +9,9 @@ import { ProductsService } from 'src/app/services/products.service';
 export class HomeComponent implements OnInit {
 
   fetching: boolean = false;
-  products:any;
+  products:any[]= [];
+  cartProducts: any[] = [];
+  whishlistProducts: any[] = [];
 
   constructor(private productSrv:ProductsService) { }
 
@@ -18,9 +20,17 @@ export class HomeComponent implements OnInit {
   }
 
   getProducts() {
-    this.productSrv.getProducts().subscribe( {
-    next: (data)=> {  this.products = data},
-    error: (e)=> { console.log(e) }    
-  });
+    this.productSrv.getProducts();
+    this.productSrv.productsSub.subscribe(res=>{
+      if(res.length !==0 ) {
+        this.products = Object.assign([], res);
+        this.fetching = false;
+        console.log(this.products);
+      }
+    })
+  }
+
+  addProductToWhishlist(product:any) {
+    this.productSrv.addProductToWhishlist(product);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-whishlist',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhishlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(public db:ProductsService) { }
 
   ngOnInit(): void {
   }
 
+  removeProductFromWhishlist(prdIdx:number) {
+    let elements = this.db.whishlistProducts.splice(prdIdx, 1);
+    console.log(elements[0]['title'], "Product Removed from Whishlist");
+  }
 }
