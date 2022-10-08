@@ -1,4 +1,5 @@
-CREATE TABLE CART(
+-- create table: cart
+CREATE TABLE cart(
   cartId               INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   userId               INTEGER NOT NULL,
   productId            INTEGER NOT NULL,
@@ -6,3 +7,6 @@ CREATE TABLE CART(
   FOREIGN KEY (userId) REFERENCES USERS(userId),
   FOREIGN KEY (productId) REFERENCES PRODUCTS(productId)
 );
+
+SHOW TABLES;
+DESC cart;
